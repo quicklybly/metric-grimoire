@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/metric-grimoire
+    username: metric-grimoire
+    password: some-cool-password

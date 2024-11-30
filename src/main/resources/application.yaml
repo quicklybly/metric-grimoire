@@ -1,11 +1,18 @@
 spring:
   application:
     name: metric-grimoire
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/changelog.yaml
 
 server:
   port: 8080
   servlet:
     context-path: /${spring.application.name}
+  shutdown: graceful
 
 management:
   server:

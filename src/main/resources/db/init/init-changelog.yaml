@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: init-table
+      author: quicklybly
+      changes:
+        - createSequence:
+            sequenceName: spells_id_seq
+            startValue: 1
+            incrementBy: 1
+        - createTable:
+            tableName: spells
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: init-add-default-value
+      author: quicklybly
+      changes:
+        - addDefaultValue:
+            tableName: spells
+            columnName: id
+            defaultValueComputed: "nextval('spells_id_seq')"
