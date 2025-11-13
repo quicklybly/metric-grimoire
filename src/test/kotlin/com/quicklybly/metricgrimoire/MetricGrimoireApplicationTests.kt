@@ -8,6 +8,6 @@ class MetricGrimoireApplicationTests {
 
     @Test
     fun contextLoads() {
+        // loads
     }
-
 }
